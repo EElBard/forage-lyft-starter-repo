@@ -10,6 +10,5 @@ class Car(Serviceable, ABC):
         self.engine = engine
         self.battery = battery
 
-    @abstractmethod
     def needs_service(self) -> bool:
-        pass
+        return self.engine.needs_service() or self.battery.needs_service()
